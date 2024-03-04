@@ -1,8 +1,10 @@
 <ul>
   @for(item of items; track $index) {
     <li>
-      <p>Id: {{item.id}}</p>
+      <button><img [src]="item.image_url"></button>
       <p>Title: {{item.title}}</p>
+      <p>Price: {{item.price}}</p>
+      <p>Year: {{item.year}}</p>
     </li>
   }
 </ul>
