@@ -16,9 +16,9 @@ export class GetDataService {
     return this.httpClient.get<Item[]>(path);
   }
 
-  postData(data: File): Observable<HttpEvent<any>> {
+  postData(data: Item): Observable<HttpEvent<any>> {
     const formData: FormData = new FormData();
-    formData.append('book[image]', data);
+    formData.append('book[image]', data.image_url);
     const request = new HttpRequest('POST', `${this.apiUrl}/books`, formData, {
       reportProgress: true,
       responseType: 'json',

@@ -15,7 +15,7 @@ export class FormItemComponent implements OnInit {
 
   constructor(private dataService: GetDataService, private fb: FormBuilder) { 
     this.form = this.fb.group({
-      title: '',
+      title: 'kevin',
       price: 0,
       year: 1000,
       author: 'kevin',
@@ -30,15 +30,24 @@ export class FormItemComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
+    const data = { book: this.form.value };
+    console.log(data);
+  }
+
+  reader(file: File) {
+    return new Promise((resolve) => {
+      const fileReader = new FileReader();
+      fileReader.onload = () => resolve(fileReader.result);
+      fileReader.readAsDataURL(file);
+    });
   }
 
   onImagePicked(event: Event) {
     const target = event.target as HTMLInputElement;
     if (target && target.files?.length) {
       const file: File | null = target.files[0];
-      this.form.patchValue({ book:{ image: file }});
-    }
+      this.reader(file).then(result => this.form.patchValue({ image: result }));
+    };
   }
 
 }
