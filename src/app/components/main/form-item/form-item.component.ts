@@ -39,7 +39,6 @@ export class FormItemComponent implements OnInit {
     formData.set('book[description]', this.form.get('description')?.value);
     formData.set('book[user_id]', this.form.get('user_id')?.value);
     formData.set('book[image]', this.form.get('image')?.value);
-    console.log(this.form.value)
     this.dataService.postData(formData).subscribe();
   }
 
