@@ -1,11 +1,11 @@
-<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
-  <input type="text" formControlName="title" placeholder="Title">
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <input type="number" formControlName="title" placeholder="Title">
   <input type="number" formControlName="price" placeholder="Price">
   <input type="number" formControlName="year" placeholder="Year">
   <input type="string" formControlName="author" placeholder="Author">
   <input type="number" formControlName="rating" placeholder="Rating">
   <textarea formControlName="description" placeholder="Description"></textarea>
   <input type="number" formControlName="user_id" placeholder="User id">
-  <input type="file" formControlName="image_url" (change)="submitImage($event)" placeholder="Image">
-  <button type="submit" [disabled]="!itemForm.valid">Submit</button>
+  <input type="file" placeholder="Image" (change)="onImagePicked($event)">
+  <button type="submit" [disabled]="!form.valid">Submit</button>
 </form>

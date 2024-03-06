@@ -5,7 +5,7 @@ import { FormItemComponent } from './form-item/form-item.component';
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [GalleryComponent, FormItemComponent ],
+  imports: [GalleryComponent, FormItemComponent],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })

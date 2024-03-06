@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { GetDataService } from '../../../services/getData.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form-item',
@@ -10,28 +11,34 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class FormItemComponent implements OnInit {
 
-  itemForm = new FormGroup({
-    title: new FormControl('', Validators.required),
-    price: new FormControl('', Validators.required),
-    year: new FormControl('', Validators.required),
-    author: new FormControl('', Validators.required),
-    rating: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required),
-    user_id: new FormControl('', Validators.required),
-    image_url: new FormControl(null as File | null, Validators.required),
-  });
+  form: FormGroup;
 
-  constructor() { }
+  constructor(private dataService: GetDataService, private fb: FormBuilder) { 
+    this.form = this.fb.group({
+      title: '',
+      price: 0,
+      year: 1000,
+      author: 'kevin',
+      rating: 1,
+      description: 'Dummy book',
+      user_id: 1,
+      image: ''
+    });
+  }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    console.log(this.itemForm);
+    console.log(this.form);
   }
 
-  submitImage(event: Event) {
-    const file = (event.target as HTMLInputElement).files?.[0];
-    this.itemForm.patchValue({ image_url: file })
+  onImagePicked(event: Event) {
+    const target = event.target as HTMLInputElement;
+    if (target && target.files?.length) {
+      const file: File | null = target.files[0];
+      this.form.patchValue({ book:{ image: file }});
+    }
   }
+
 }

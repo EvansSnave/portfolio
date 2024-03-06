@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Item } from '../models/item';
 
@@ -16,23 +16,13 @@ export class GetDataService {
     return this.httpClient.get<Item[]>(path);
   }
 
-  postData(data: object): Observable<Item> {
-    const path: string = this.apiUrl + '/books';
-    return this.httpClient.post<Item>(path, data);
-  }
-
-  formatParams(data: Item): { book: Item } {
-    return {
-      book: {
-        title: data.title,
-        price: data.price,
-        year: data.year,
-        author: data.author,
-        rating: data.rating,
-        description: data.description,
-        user_id: data.user_id,
-        image_url: data.image_url
-      }
-    }
+  postData(data: File): Observable<HttpEvent<any>> {
+    const formData: FormData = new FormData();
+    formData.append('book[image]', data);
+    const request = new HttpRequest('POST', `${this.apiUrl}/books`, formData, {
+      reportProgress: true,
+      responseType: 'json',
+    });
+    return this.httpClient.request(request);
   }
 }
