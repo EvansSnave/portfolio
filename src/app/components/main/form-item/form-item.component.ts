@@ -17,7 +17,7 @@ export class FormItemComponent implements OnInit {
     this.form = this.fb.group({
       title: 'kevin',
       price: 0,
-      year: 1000,
+      year: 1001,
       author: 'kevin',
       rating: 1,
       description: 'Dummy book',
@@ -30,23 +30,24 @@ export class FormItemComponent implements OnInit {
   }
 
   onSubmit() {
-    const data = { book: this.form.value };
-    console.log(data);
-  }
-
-  reader(file: File) {
-    return new Promise((resolve) => {
-      const fileReader = new FileReader();
-      fileReader.onload = () => resolve(fileReader.result);
-      fileReader.readAsDataURL(file);
-    });
+    const formData = new FormData();
+    formData.set('book[title]', this.form.get('title')?.value);
+    formData.set('book[price]', this.form.get('price')?.value);
+    formData.set('book[year]', this.form.get('year')?.value);
+    formData.set('book[author]', this.form.get('author')?.value);
+    formData.set('book[rating]', this.form.get('rating')?.value);
+    formData.set('book[description]', this.form.get('description')?.value);
+    formData.set('book[user_id]', this.form.get('user_id')?.value);
+    formData.set('book[image]', this.form.get('image')?.value);
+    console.log(this.form.value)
+    this.dataService.postData(formData).subscribe();
   }
 
   onImagePicked(event: Event) {
     const target = event.target as HTMLInputElement;
     if (target && target.files?.length) {
       const file: File | null = target.files[0];
-      this.reader(file).then(result => this.form.patchValue({ image: result }));
+      this.form.patchValue({ image: file });
     };
   }
 
