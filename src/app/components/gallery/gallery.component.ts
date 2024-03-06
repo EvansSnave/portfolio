@@ -17,9 +17,9 @@ export class GalleryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getDataService.getItems().subscribe((items: Item[]) => {
+    this.getDataService.items$.subscribe(items => { this.items = items });
+    this.getDataService.getItems().subscribe((items) => {
       this.items = items;
     });
-    this.getDataService.items$.subscribe(items => { this.items = items });
   }
 }
