@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, switchMap, tap } from 'rxjs';
 import { Item } from '../models/item';
 
 @Injectable({
@@ -8,6 +8,8 @@ import { Item } from '../models/item';
 })
 export class GetDataService {
   apiUrl: string ='http://localhost:4000';
+  private itemsSubject = new BehaviorSubject<Item[]>([]);
+  public items$ = this.itemsSubject.asObservable();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,6 +18,9 @@ export class GetDataService {
   }
 
   postData(data: FormData): Observable<object> {
-    return this.httpClient.post<object>(`${this.apiUrl}/books`, data);
+    return this.httpClient.post<object>(`${this.apiUrl}/books`, data).pipe(
+      switchMap(() => this.getItems()), 
+      tap((items) => this.itemsSubject.next(items))
+    );
   }
 }
