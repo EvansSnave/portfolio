@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+$main-font: white;
+$secondary-main: rgb(255, 123, 0);
+$main-color: #272727;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: none;
+  color: $main-font;
+  & > * {
+    color: $main-font;
+  }
+
+  box-sizing: border-box;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: small;
+  font-weight: 100;
+  outline: 1px solid red;
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+button {
+  padding: 5px 10px;
+  border: 1px solid $main-font;
+  &:hover {
+    border-color: $secondary-main;
+  }
+  &:active {
+    background-color: $secondary-main;
+  }
+}
+
+html {
+  background-color: $main-color;
+}
