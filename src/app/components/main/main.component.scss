@@ -17,3 +17,25 @@
 .title {
   font-size: xxx-large;
 }
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  &:hover {
+    .triangle {
+      border-left-color: rgb(255, 123, 0);
+    }
+  }
+  &:active {
+    .triangle {
+      border-left-color: white;
+    }
+  }
+}
+
+.triangle {
+  border-top: 8px solid transparent;
+  border-left: 8px solid white;
+  border-bottom: 8px solid transparent;
+}

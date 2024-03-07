@@ -1,6 +1,7 @@
 nav {
   padding: 20px 30px 5px 30px;
   justify-content: space-between;
+  backdrop-filter: blur(5px);
   box-shadow: inset 0px 67px 43px -26px rgb(0, 0, 0);
   position: fixed;
   width: 100%;
@@ -13,4 +14,15 @@ nav {
 
 img {
   width: 70px;
+}
+
+a {
+  padding: 10px;
+  color: #858482;
+  &:hover {
+    color: white;
+  }
+  &:active {
+    color: rgb(255, 123, 0);
+  }
 }
