@@ -1,3 +1,16 @@
-.nav__links {
+nav {
+  padding: 20px 30px 5px 30px;
+  justify-content: space-between;
+  box-shadow: inset 0px 67px 43px -26px rgb(0, 0, 0);
+  position: fixed;
+  width: 100%;
+}
+
+.nav__links, nav {
   display: flex;
+  align-items: center;
+}
+
+img {
+  width: 70px;
 }

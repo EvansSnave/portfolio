@@ -7,7 +7,7 @@ import { FormItemComponent } from './form-item/form-item.component';
   standalone: true,
   imports: [GalleryComponent, FormItemComponent],
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
 

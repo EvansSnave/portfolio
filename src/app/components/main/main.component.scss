@@ -1,0 +1,19 @@
+.presentation {
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  & > * {
+    margin-left: 400px;
+  }
+}
+
+.subtitle {
+  color: #858482;
+  font-size: x-large;
+}
+
+.title {
+  font-size: xxx-large;
+}
