@@ -5,6 +5,7 @@ nav {
   box-shadow: inset 0px 67px 43px -26px rgb(0, 0, 0);
   position: fixed;
   width: 100%;
+  z-index: 100;
 }
 
 .nav__links, nav {

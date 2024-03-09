@@ -1,9 +1,9 @@
-<div>
+<div class="form-container">
   <article>
     <h3>A BRIEF SHOWCASE</h3>
     This below is an example of what I'm capable of. It's a form where users can submit data to create a new item.
     The item will be displayed inmediatly in the gallery below the form. I implemented Angular interfaces, services and data binding.
-    As for the images I used AWS. All this information is beign stored in a postgresql database using ruby on rails.
+    As for the images I used AWS. All this information is being stored in a postgresql database using ruby on rails.
     The form contains all necessary validations according to the backend I design thus users can't submit invalid information.
     To understand my backend you can see its documentation here. Please check the responsive design of this portfolio in all pages and check 
     out the projects button above where all my other projects are.
@@ -17,17 +17,23 @@
   </article>
   <form (ngSubmit)="onSubmit()" [formGroup]="form" enctype="multipart/form-data">
     <h6>CREATE A NEW ITEM!</h6>
-    <input type="string" formControlName="title" placeholder="Title">
-    <input type="number" formControlName="price" placeholder="Price">
-    <input type="number" formControlName="year" placeholder="Year">
-    <input type="string" formControlName="author" placeholder="Author">
-    <input type="number" formControlName="rating" placeholder="Rating">
-    <textarea formControlName="description" placeholder="Description"></textarea>
-    <input type="number" formControlName="user_id" placeholder="User id">
-    <label for="image">
-      Select image
-      <input id="image" type="file" placeholder="Image" (change)="onImagePicked($event)">
-    </label>
-    <button type="submit" [disabled]="!form.valid">Submit</button>
+    <div class="input-container">
+      <div class="inputs">
+        <input type="string" formControlName="title" placeholder="Title">
+        <input type="number" formControlName="price" placeholder="Price">
+        <input type="number" formControlName="year" placeholder="Year">
+        <input type="string" formControlName="author" placeholder="Author">
+        <input type="number" formControlName="rating" placeholder="Rating">
+      </div>
+      <div class="inputs">
+        <textarea formControlName="description" placeholder="Description"></textarea>
+        <input type="number" formControlName="user_id" placeholder="User id">
+        <label for="image">
+          Select image
+        <input id="image" type="file" placeholder="Image" (change)="onImagePicked($event)">
+        </label>
+      </div>
+    </div>
+    <button type="submit" [disabled]="!form.valid">>></button>
   </form>
 </div>

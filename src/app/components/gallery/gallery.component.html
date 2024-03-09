@@ -2,8 +2,9 @@
   @for(item of items; track $index) {
     <li class="item__{{$index}}">
       <button>
+        <div class="overlay"></div>
         <img [src]="item.image_url">
-        <div>
+        <div class="info">
           <p>Title: {{item.title}}</p>
           <p>Price: {{item.price}}</p>
           <p>Year: {{item.year}}</p>
