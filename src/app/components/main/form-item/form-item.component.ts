@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './form-item.component.html',
-  styleUrls: ['./form-item.component.css']
+  styleUrls: ['./form-item.component.scss']
 })
 export class FormItemComponent implements OnInit {
 

@@ -6,7 +6,7 @@ import { GetDataService } from '../../services/getData.service';
   selector: 'app-gallery',
   standalone: true,
   templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.css']
+  styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
 

@@ -1,11 +1,33 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="form" enctype="multipart/form-data">
-  <input type="string" formControlName="title" placeholder="Title">
-  <input type="number" formControlName="price" placeholder="Price">
-  <input type="number" formControlName="year" placeholder="Year">
-  <input type="string" formControlName="author" placeholder="Author">
-  <input type="number" formControlName="rating" placeholder="Rating">
-  <textarea formControlName="description" placeholder="Description"></textarea>
-  <input type="number" formControlName="user_id" placeholder="User id">
-  <input type="file" placeholder="Image" (change)="onImagePicked($event)">
-  <button type="submit" [disabled]="!form.valid">Submit</button>
-</form>
+<div>
+  <article>
+    <h3>A BRIEF SHOWCASE</h3>
+    This below is an example of what I'm capable of. It's a form where users can submit data to create a new item.
+    The item will be displayed inmediatly in the gallery below the form. I implemented Angular interfaces, services and data binding.
+    As for the images I used AWS. All this information is beign stored in a postgresql database using ruby on rails.
+    The form contains all necessary validations according to the backend I design thus users can't submit invalid information.
+    To understand my backend you can see its documentation here. Please check the responsive design of this portfolio in all pages and check 
+    out the projects button above where all my other projects are.
+    <h4>THANK YOU FOR THE TIME</h4>
+    I want to thank you for being here watching my work. As you can see I'm confortable doing both backend and frontend from scratch and 
+    I don't let one day go by without learning and study new frameworks and technologies. I'm so eager to work with you if you desire so. 
+    Do review my projects and contact me any time, I'll be more than happy to have a chat.
+    <h5>HOW TO CONTACT ME?</h5>
+    You can scroll down and you'll find all relevant contact information. I'll be waiting for your message!<br>
+    God bless you.
+  </article>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" enctype="multipart/form-data">
+    <h6>CREATE A NEW ITEM!</h6>
+    <input type="string" formControlName="title" placeholder="Title">
+    <input type="number" formControlName="price" placeholder="Price">
+    <input type="number" formControlName="year" placeholder="Year">
+    <input type="string" formControlName="author" placeholder="Author">
+    <input type="number" formControlName="rating" placeholder="Rating">
+    <textarea formControlName="description" placeholder="Description"></textarea>
+    <input type="number" formControlName="user_id" placeholder="User id">
+    <label for="image">
+      Select image
+      <input id="image" type="file" placeholder="Image" (change)="onImagePicked($event)">
+    </label>
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+div {
+  background-color: #272727;
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+article {
+  width: 50%;
+}
+
+h3, h4, h5, h6 {
+  font-size: xx-large;
+  margin: 20px 0;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}

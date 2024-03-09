@@ -24,7 +24,7 @@ $main-color: #272727;
   box-sizing: border-box;
   border-radius: 0;
   background-color: transparent;
-  font-size: small;
+  font-size: medium;
   font-weight: 100;
   outline: 1px solid red;
 
@@ -38,6 +38,7 @@ $main-color: #272727;
 button {
   padding: 10px 20px;
   margin-top: 20px;
+  cursor: pointer;
   border: 1px solid $main-font;
   &:hover {
     border-color: $secondary-main;
