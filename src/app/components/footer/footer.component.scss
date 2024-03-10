@@ -1,0 +1,25 @@
+footer {
+  padding: 20px 30px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  background-color: black;
+}
+
+ul {
+  display: flex;
+  gap: 10px;
+}
+
+img {
+  width: 40px;
+}
+
+.logo {
+  width: 70px;
+}
+
+p {
+  color: grey;
+  font-size: medium;
+}
