@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../../models/project';
+import { PROJECTS } from './projects.data';
 
 @Component({
   selector: 'app-projects',
@@ -12,7 +13,7 @@ export class ProjectsComponent implements OnInit {
   projects: Project[];
 
   constructor() {
-    this.projects = [];
+    this.projects = PROJECTS;
   }
 
   ngOnInit() {

@@ -1,3 +1,28 @@
 <section>
-  
+  <ul>
+    @for (project of projects; track $index) {
+      <li>
+        <ul class="images">
+          @for (image of project.images; track $index) {
+            <li>
+              <img alt="project showcase" src={{image}}>
+            </li>
+          }
+        </ul>
+        <div>
+          <p>{{project.title}}</p>
+          <article>{{project.description}}</article>
+          <ul class="technologies">
+            @for (tech of project.technologies; track $index) {
+              <li>
+                <a><img alt="technologie icon" src={{tech.image_url}}></a>
+                <p>{{tech.title}} </p>
+              </li>
+            }
+          </ul>
+          <p>{{project.instructions}}</p>
+        </div>
+      </li>
+    }
+  </ul>
 </section>

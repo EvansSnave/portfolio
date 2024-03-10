@@ -1,7 +1,7 @@
 export interface Project {
-  image_url: string,
+  images: Array<string>,
   title: string,
-  tecnologies: Array<string>,
+  technologies: Array<{ image_url: string, title: string }>,
   description: string,
   repository_link: string,
   instructions: string
