@@ -43,3 +43,79 @@ button {
   border-left: 8px solid white;
   border-bottom: 8px solid transparent;
 }
+
+img {
+  position: absolute;
+  right: 0;
+  width: 1575px;
+  z-index: -10;
+}
+
+.background {
+  width: 100%;
+  animation: pulse 5s infinite;
+  overflow: hidden;
+  position: absolute;
+  z-index: -20;
+}
+
+@keyframes pulse {
+  0% {background: #272727;}
+  50% {background: #272727;}
+  100% {background: #272727;}
+}
+
+.elements {
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* ====================
+      Squares
+=======================*/
+
+.square {
+  border: 10px dashed rgba(255, 123, 0, 0.35);
+}
+
+.sq2{
+  animation: move1 180s infinite;
+  animation-timing-function: linear;
+  width: 1110px;
+  height: 1110px;
+}
+
+@keyframes move1 {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.5;
+  }
+  
+  50% {
+    width: 1000px;
+    height: 1000px;
+  }
+  
+  100% {
+     transform: rotate(1000deg);
+    opacity: 1;
+  }
+  }
+
+.sq3 {
+  width: 600px;
+  height: 600px;
+  animation: move1 120s infinite;
+  animation-timing-function: linear;
+}
+
+.sq1 {
+  width: 500px;
+  height: 500px;
+  animation: move1 100s infinite;
+  animation-timing-function: linear;
+}
+

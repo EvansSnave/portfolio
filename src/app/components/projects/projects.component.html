@@ -2,20 +2,26 @@
   <ul>
     @for (project of projects; track $index) {
       <li>
-        <ul class="images">
-          @for (image of project.images; track $index) {
-            <li>
-              <img alt="project showcase" src={{image}}>
-            </li>
-          }
-        </ul>
+        <div class="carousel">
+          <div class="carousel-view">
+            <button type="button"><</button>
+            <ul class="images">
+              @for (image of project.images; track $index) {
+                <li class="container-image">
+                  <img alt="project showcase" src={{image}} class="showcase_image">
+                </li>
+              }
+            </ul>
+            <button type="button">></button>
+          </div>
+        </div>
         <div>
           <p>{{project.title}}</p>
           <article>{{project.description}}</article>
           <ul class="technologies">
             @for (tech of project.technologies; track $index) {
               <li>
-                <a><img alt="technologie icon" src={{tech.image_url}}></a>
+                <a><img alt="technologie icon" src={{tech.image_url}} class="icon"></a>
                 <p>{{tech.title}} </p>
               </li>
             }
