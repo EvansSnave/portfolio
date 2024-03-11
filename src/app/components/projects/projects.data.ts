@@ -1,7 +1,7 @@
 import { Project } from "../../models/project";
 
 export const PROJECTS: Project[] = [
-  { 
+  {
     images: [
       '../../assets/images/showcase/cover1.webp',
       '../../assets/images/showcase/refenrence.jpg'
@@ -15,7 +15,7 @@ export const PROJECTS: Project[] = [
     repository_link: 'https://github.com/kiboma2021/capstone-project-front-end',
     instructions: 'Download and try',
   },
-  { 
+  {
     images: [
       '../../assets/images/showcase/reference2.jpg',
       '../../assets/images/showcase/cover4.jpeg'
