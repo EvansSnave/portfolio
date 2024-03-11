@@ -1,18 +1,18 @@
 <section>
-  <ul>
+  <ul class="projects-list">
     @for (project of projects; track $index) {
-      <li>
+      <li class="project">
         <div class="carousel">
           <div class="carousel-view">
-            <button type="button"><</button>
-            <ul class="images">
+            <button type="button" #leftBtn><</button>
+            <ul class="images" #images>
               @for (image of project.images; track $index) {
                 <li class="container-image">
-                  <img alt="project showcase" src={{image}} class="showcase_image">
+                  <img alt="project showcase" src={{image}} class="showcase-image">
                 </li>
               }
             </ul>
-            <button type="button">></button>
+            <button type="button" #rightBtn>></button>
           </div>
         </div>
         <div>
