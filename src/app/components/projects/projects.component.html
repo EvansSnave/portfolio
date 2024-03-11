@@ -8,7 +8,7 @@
             <ul class="images" #images>
               @for (image of project.images; track $index) {
                 <li class="container-image">
-                  <img alt="project showcase" src={{image}} class="showcase-image">
+                  <img alt="project showcase" [src]="image" class="showcase-image">
                 </li>
               }
             </ul>
@@ -21,13 +21,13 @@
           <ul class="technologies">
             @for (tech of project.technologies; track $index) {
               <li>
-                <a><img alt="technologie icon" src={{tech.image_url}} class="icon"></a>
+                <a><img alt="technologie icon" [src]="tech.image_url" class="icon"></a>
                 <p>{{tech.title}} </p>
               </li>
             }
           </ul>
           <p>{{project.instructions}}</p>
-          <p>See the GitHub repository <a href={{project.repository_link}} target="_blank">here</a></p>
+          <p>See the GitHub repository <a [href]="project.repository_link" target="_blank">here</a></p>
         </div>
       </li>
     }
