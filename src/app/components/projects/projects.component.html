@@ -15,19 +15,19 @@
             <button type="button" #rightBtn>></button>
           </div>
         </div>
-        <div>
-          <p>{{project.title}}</p>
-          <article>{{project.description}}</article>
+        <div class="project-info">
+          <p class="project-title">{{project.title}}</p>
+          <article class="project-description">{{project.description}}</article>
+          <p class="project-instructions">{{project.instructions}}</p>
           <ul class="technologies">
             @for (tech of project.technologies; track $index) {
-              <li>
-                <a><img alt="technologie icon" [src]="tech.image_url" class="icon"></a>
+              <li class="technology">
+                <a [href]="tech.link" target="_blank"><img alt="technologie icon" [src]="tech.image_url" class="icon"></a>
                 <p>{{tech.title}} </p>
               </li>
             }
           </ul>
-          <p>{{project.instructions}}</p>
-          <p>See the GitHub repository <a [href]="project.repository_link" target="_blank">here</a></p>
+          <p class="project-github">See the GitHub repository <a [href]="project.repository_link" target="_blank">here</a></p>
         </div>
       </li>
     }

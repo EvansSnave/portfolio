@@ -1,4 +1,5 @@
 import { Project } from "../../models/project";
+import { TECH } from "./technologies.data";
 
 export const PROJECTS: Project[] = [
   {
@@ -7,10 +8,7 @@ export const PROJECTS: Project[] = [
       '../../assets/images/showcase/refenrence.jpg'
     ],
     title: 'Boooks',
-    technologies: [
-      { image_url: '../../assets/images/html-icon.png', title: 'HTML'}, 
-      { image_url: '../../assets/images/sass-icon.png', title: 'SCSS' }
-    ],
+    technologies: [ TECH.HTML, TECH.SCSS ],
     description: 'Its a project',
     repository_link: 'https://github.com/kiboma2021/capstone-project-front-end',
     instructions: 'Download and try',
@@ -21,11 +19,49 @@ export const PROJECTS: Project[] = [
       '../../assets/images/showcase/cover4.jpeg'
     ],
     title: 'Another project',
-    technologies: [
-      { image_url: '../../assets/images/html-icon.png', title: 'HTML'}, 
-      { image_url: '../../assets/images/sass-icon.png', title: 'SCSS' },
-      { image_url: '../../assets/images/javascript-icon.svg', title: 'Javascript' },
+    technologies: [ TECH.HTML, TECH.SCSS, TECH.JS ],
+    description: `
+      dsasdsffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdsaddsdsdfsfsfsf
+      asadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddaassasaasda
+      adaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassdsdsdsddsfdffffffffffffffffffffffffffdf
+      asassasaassa
+      dsasdsffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdsaddsdsdfsfsfsf
+      asadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddaassasaasda
+      adaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassdsdsdsddsfdffffffffffffffffffffffffffdf
+      asassasaassa
+      dsasdsffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdsaddsdsdfsfsfsf
+      asadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddaassasaasda
+      adaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassdsdsdsddsfdffffffffffffffffffffffffffdf
+      asassasaassa
+      dsasdsffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdsaddsdsdfsfsfsf
+      asadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddaassasaasda
+      adaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassdsdsdsddsfdffffffffffffffffffffffffffdf
+      asassasaassa
+      dsasdsffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdsaddsdsdfsfsfsf
+      asadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddaassasaasda
+      adaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassdsdsdsddsfdffffffffffffffffffffffffffdf
+      asassasaassa
+      dsasdsffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdsaddsdsdfsfsfsf
+      asadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddaassasaasda
+      adaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassdsdsdsddsfdffffffffffffffffffffffffffdf
+      asassasaassa
+      dsasdsffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdsaddsdsdfsfsfsf
+      asadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddaassasaasda
+      adaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassdsdsdsddsfdffffffffffffffffffffffffffdf
+      asassasaassa
+    `,
+    repository_link: 'https://github.com/kiboma2021/capstone-project-front-end',
+    instructions: 'Download and try',
+  },
+  {
+    images: [
+      '../../assets/images/showcase/cover3.jpg',
+      '../../assets/images/showcase/reference5.jpg',
+      '../../assets/images/showcase/reference3.jpg'
     ],
+    title: 'Another project',
+    technologies: [ TECH.HTML, TECH.SCSS, TECH.JS, TECH.Angular, TECH.Git, 
+      TECH.PostgreSQL, TECH.Rails, TECH.React, TECH.Rspec],
     description: 'Its a project',
     repository_link: 'https://github.com/kiboma2021/capstone-project-front-end',
     instructions: 'Download and try',
