@@ -1,10 +1,12 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { Project } from '../../models/project';
 import { PROJECTS } from './projects.data';
+import { DetailsComponent } from './details/details.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
+  imports: [DetailsComponent],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
