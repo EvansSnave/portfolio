@@ -6,6 +6,8 @@ services:
       - 4200:4200
     networks:
       - portfolio
+    links:
+      - backend
   backend:
     image: backend-image
     ports:

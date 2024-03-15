@@ -7,7 +7,7 @@ import { Item } from '../models/item';
   providedIn: 'root'
 })
 export class GetDataService {
-  apiUrl: string ='http://localhost:4000';
+  apiUrl: string ='http://backend:4000';
   private itemsSubject = new BehaviorSubject<Item[]>([]);
   public items$ = this.itemsSubject.asObservable();
 
