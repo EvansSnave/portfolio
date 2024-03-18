@@ -3,16 +3,19 @@ section {
 }
 
 button {
-  border-color: grey;
   color: grey;
+  border: none;
 }
 
 .projects-list {
-  margin: 50px 70px;
+  margin: 50px 0;
+  gap: 30px;
+  display: grid;
 }
 
 .project {
   display: flex;
+  background-color: black;
   &-description {
     height: 315px;
     overflow-y: scroll;
