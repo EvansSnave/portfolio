@@ -4,6 +4,7 @@ footer {
   display: flex;
   align-items: center;
   background-color: black;
+  flex-direction: column;
 }
 
 ul {
@@ -22,4 +23,11 @@ img {
 p {
   color: grey;
   font-size: medium;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
