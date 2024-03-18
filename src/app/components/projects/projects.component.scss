@@ -8,7 +8,6 @@ button {
 }
 
 .projects-list {
-  margin: 50px 0;
   gap: 30px;
   display: grid;
 }
@@ -16,6 +15,7 @@ button {
 .project {
   display: flex;
   background-color: black;
+  padding: 30px 0 30px;
   &-description {
     height: 315px;
     overflow-y: scroll;
@@ -73,6 +73,7 @@ button {
   max-height: 600px;
   flex-direction: column;
   padding: 0 40px 40px;
+  border-left: solid grey 1px;
   gap: 15px;
   &>* {
     color: grey;
