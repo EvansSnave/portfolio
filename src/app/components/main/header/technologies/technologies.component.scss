@@ -15,18 +15,16 @@ section {
 
 ul {
   display: flex;
-  animation: infiniteScroll 2.5s linear infinite;
+  width: max-content;
+  padding-block: 65px;
   li {
     padding: 30px;
-    background-size: cover;
+    animation: infiniteScroll 30s linear infinite;
   }
 }
 
 @keyframes infiniteScroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(50%);
+  to {
+    transform: translateX(calc(-50% - 99.27rem)); /* Move the list by its full width */
   }
 }
