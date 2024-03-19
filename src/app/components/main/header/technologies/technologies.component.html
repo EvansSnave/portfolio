@@ -1,0 +1,8 @@
+<section>
+  <ul>
+    <li *ngFor="let tech of technologies | keyvalue">
+      <a [href]="tech.value.link"><img [src]="tech.value.image_url" [alt]="tech.value.title"></a>
+      <p>{{tech.key}}</p>
+    </li>
+  </ul>
+</section>

@@ -43,7 +43,7 @@ button {
 img {
   position: absolute;
   right: 0;
-  width: 1575px;
+  width: 1500px;
   z-index: -10;
 }
 
@@ -53,6 +53,7 @@ img {
   overflow: hidden;
   position: absolute;
   z-index: -20;
+  height: 1000px;
 }
 
 @keyframes pulse {

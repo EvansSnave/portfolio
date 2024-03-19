@@ -1,0 +1,32 @@
+img {
+  width: 150px;
+  height: 150px;
+}
+
+section {
+  background-color: white;
+  overflow: hidden;
+  p {
+    color: black;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+ul {
+  display: flex;
+  animation: infiniteScroll 2.5s linear infinite;
+  li {
+    padding: 30px;
+    background-size: cover;
+  }
+}
+
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
