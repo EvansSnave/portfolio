@@ -1,9 +1,30 @@
 header {
-  background-color: grey;
-  padding: 100px;
   display: flex;
 }
 
 h3 {
-  font-size: xx-large;
+  font-size: xxx-large;
+  margin-bottom: 40px;
 }
+
+img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 40px;
+}
+
+aside {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+}
+
+section {
+  background-color: grey;
+}
+
+aside, section {
+  padding: 100px;
+} 

@@ -25,6 +25,6 @@ ul {
 
 @keyframes infiniteScroll {
   to {
-    transform: translateX(calc(-50% - 99.27rem)); /* Move the list by its full width */
+    transform: translateX(calc(-50% - 99.27rem));
   }
 }
