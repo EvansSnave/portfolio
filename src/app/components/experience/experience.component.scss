@@ -1,0 +1,38 @@
+section {
+  padding-top: 100px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+}
+
+ul {
+  gap: 70px;
+  display: grid;
+  margin-top: 100px;
+}
+
+li {
+  display: flex;
+  background-color: lightslategray;
+  padding: 50px 200px;
+  gap: 50px;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+.title {
+  text-align: center;
+}
+
+.bachelor, .dates {
+  color: black;
+  margin: 3px 0;
+  &>* {
+    color: black;
+  }
+}
