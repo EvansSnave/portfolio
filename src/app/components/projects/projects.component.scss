@@ -1,6 +1,11 @@
+@import "../../../mixins";
+
 .projects-list {
   gap: 30px;
   display: grid;
+  @include medium-down {
+    justify-items: center;
+  }
 }
 
 .project {
@@ -24,6 +29,15 @@
       color: #afaeae;
     }
   }
+  @include medium-down {
+    flex-direction: column;
+    width: 80%;
+    gap: 30px;
+    border-radius: 30px;
+  }
+  @include small-down {
+
+  }
 }
 
 .carousel-view {
@@ -39,6 +53,10 @@
       display: none;
     }
   }
+  @include medium-down {
+    justify-content: center;
+  }
+
 }
 
 .container-image {
@@ -46,6 +64,9 @@
     object-fit: cover;
     width: 800px;
     height: 600px;
+    @include small-down {
+      width: 620px;
+    }
   }
 }
 

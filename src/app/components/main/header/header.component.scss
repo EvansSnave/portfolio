@@ -1,5 +1,10 @@
+@import "../../../../mixins";
+
 header {
   display: flex;
+  @include medium-down {
+    flex-direction: column;
+  }
 }
 
 h3 {
@@ -11,6 +16,9 @@ img {
   width: 200px;
   height: 200px;
   margin-bottom: 40px;
+  @include medium-down {
+    margin-bottom: 0;
+  }
 }
 
 aside {
@@ -19,6 +27,10 @@ aside {
   flex-direction: column;
   align-items: center;
   background-color: black;
+  @include medium-down {
+    flex-direction: row;
+    width: 100%;
+  }
 }
 
 section {
