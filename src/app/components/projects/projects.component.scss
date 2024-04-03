@@ -31,12 +31,9 @@
   }
   @include medium-down {
     flex-direction: column;
-    width: 80%;
+    width: 900px;
     gap: 30px;
     border-radius: 30px;
-  }
-  @include small-down {
-
   }
 }
 
@@ -64,9 +61,6 @@
     object-fit: cover;
     width: 800px;
     height: 600px;
-    @include small-down {
-      width: 620px;
-    }
   }
 }
 
