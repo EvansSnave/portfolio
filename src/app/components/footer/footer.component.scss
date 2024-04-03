@@ -1,3 +1,5 @@
+@import "../../../mixins";
+
 footer {
   padding: 20px 30px;
   justify-content: space-between;
@@ -14,15 +16,24 @@ ul {
 
 img {
   width: 40px;
+  @include extra-small-down {
+    width: 35px;
+  }
 }
 
 .logo {
   width: 70px;
+  @include extra-small-down {
+    width: 50px;
+  }
 }
 
 p {
   color: grey;
   font-size: medium;
+  @include small-down {
+    display: inline-grid;
+  }
 }
 
 .contact {
@@ -42,4 +53,7 @@ p {
   color: black;
   background-color: white;
   padding: 100px;
+  @include small-down {
+    padding: 50px;
+  }
 }
