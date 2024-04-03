@@ -35,6 +35,12 @@
     gap: 30px;
     border-radius: 30px;
   }
+  @include small-down {
+    width: 600px;
+  }
+  @include extra-small-down {
+    width: 450px;
+  }
 }
 
 .carousel-view {
@@ -61,6 +67,14 @@
     object-fit: cover;
     width: 800px;
     height: 600px;
+    @include small-down {
+      width: 500px;
+      height: 300px;
+    }
+    @include extra-small-down {
+      width: 350px;
+      height: 300px;
+    }
   }
 }
 

@@ -25,7 +25,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     this.leftBtnList = this.elementRef.nativeElement;
     this.rightBtnList = this.elementRef.nativeElement;
     this.imagesList = this.elementRef.nativeElement;
-    this.carouselSize = 800
+    this.carouselSize = getWindow().innerWidth >= 930 ? 800 : 620;
   }
 
   ngOnInit() {
@@ -51,11 +51,16 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     })
   }
 
-  // @HostListener('window:resize', ['$event'])
-  // onResize() {
-  //   this.carouselSize = getWindow().innerWidth >= 930 ? 800 : 620;
-  //   if (getWindow().innerWidth >= 930 && getWindow().innerWidth <= 1100) {
-  //     this.carouselSize = 700;
-  //   }
-  // }
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if (getWindow().innerWidth <= 930 && getWindow().innerWidth >= 671) {
+      this.carouselSize = 500;
+    }
+    else if (getWindow().innerWidth <= 670) {
+      this.carouselSize = 350;
+    }
+    else {
+      this.carouselSize = 800;
+    }
+  }
 }
