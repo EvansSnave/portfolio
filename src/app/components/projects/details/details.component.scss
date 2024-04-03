@@ -1,10 +1,19 @@
+@import "../../../../mixins";
+
 div {
   padding: 100px;
+  @include small-down {
+    padding: 50px;
+  }
 }
 
 h1 {
   font-size: xxx-large;
   margin-bottom: 30px;
+  @include small-down {
+    font-size: xx-large;
+    margin-bottom: 10px;
+  }
 }
 
 article {

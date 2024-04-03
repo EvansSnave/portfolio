@@ -8,8 +8,14 @@
             <button type="button" #leftBtn><</button>
             <ul class="images" #images>
               @for (image of project.images; track $index) {
-                <li class="container-image">
-                  <img alt="project showcase" [src]="image" class="showcase-image">
+                <li class="container-image">      
+                  @defer (on viewport){
+                    <img alt="project showcase" [src]="image" class="showcase-image">
+                  } @placeholder {
+                    <div>...</div>
+                  } @loading {
+                    <div>...Loading</div>
+                  }
                 </li>
               }
             </ul>
@@ -23,7 +29,13 @@
           <ul class="technologies">
             @for (tech of project.technologies; track $index) {
               <li class="technology">
-                <a [href]="tech.link" target="_blank"><img alt="technologie icon" [src]="tech.image_url" class="icon"></a>
+                @defer (on viewport){
+                  <a [href]="tech.link" target="_blank"><img alt="technologie icon" [src]="tech.image_url" class="icon"></a>
+                } @placeholder {
+                  <div>...</div>
+                } @loading {
+                  <div>...Loading</div>
+                }
                 <p>{{tech.title}} </p>
               </li>
             }

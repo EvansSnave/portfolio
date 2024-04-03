@@ -1,16 +1,36 @@
+@import "../../../../mixins";
+
 header {
   display: flex;
+  @include medium-down {
+    flex-direction: column;
+  }
 }
 
 h3 {
   font-size: xxx-large;
   margin-bottom: 40px;
+  @include small-down {
+    font-size: xx-large;
+    margin-bottom: 20px;
+  }
 }
 
 img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
   margin-bottom: 40px;
+  border: 1px solid white;
+  border-radius: 30px;
+  @include medium-down {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+  @include small-down {
+    width: 200px;
+  }
+  @include extra-small-down {
+    width: 150px;
+  }
 }
 
 aside {
@@ -19,6 +39,10 @@ aside {
   flex-direction: column;
   align-items: center;
   background-color: black;
+  @include medium-down {
+    flex-direction: row;
+    width: 100%;
+  }
 }
 
 section {
@@ -27,4 +51,13 @@ section {
 
 aside, section {
   padding: 100px;
+  @include small-down {
+    padding: 50px;
+  }
+}
+
+aside {
+  @include extra-small-down {
+    padding: 25px;
+  }
 }

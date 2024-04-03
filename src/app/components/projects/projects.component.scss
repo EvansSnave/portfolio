@@ -1,11 +1,11 @@
-button {
-  color: grey;
-  border: none;
-}
+@import "../../../mixins";
 
 .projects-list {
   gap: 30px;
   display: grid;
+  @include medium-down {
+    justify-items: center;
+  }
 }
 
 .project {
@@ -29,6 +29,18 @@ button {
       color: #afaeae;
     }
   }
+  @include medium-down {
+    flex-direction: column;
+    width: 900px;
+    gap: 30px;
+    border-radius: 30px;
+  }
+  @include small-down {
+    width: 600px;
+  }
+  @include extra-small-down {
+    width: 450px;
+  }
 }
 
 .carousel-view {
@@ -44,6 +56,10 @@ button {
       display: none;
     }
   }
+  @include medium-down {
+    justify-content: center;
+  }
+
 }
 
 .container-image {
@@ -51,6 +67,14 @@ button {
     object-fit: cover;
     width: 800px;
     height: 600px;
+    @include small-down {
+      width: 500px;
+      height: 300px;
+    }
+    @include extra-small-down {
+      width: 350px;
+      height: 300px;
+    }
   }
 }
 
@@ -59,17 +83,12 @@ button {
   height: 50px;
 }
 
-button {
-  margin: 0;
-}
-
 .project-info {
   display: flex;
   width: 100%;
   max-height: 600px;
   flex-direction: column;
   padding: 0 40px 40px;
-  border-left: solid grey 1px;
   gap: 15px;
   &>* {
     color: grey;
@@ -95,5 +114,15 @@ button {
   align-items: center;
   &>p {
     color: #b97800;
+  }
+}
+
+button {
+  color: grey;
+  border: none;
+  background-color: rgb(91 91 91);
+  margin: 0;
+  &:active {
+    background-color: rgb(161, 161, 161);
   }
 }

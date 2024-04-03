@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { Project } from '../../models/project';
 import { PROJECTS } from './projects.data';
 import { DetailsComponent } from './details/details.component';
+import { getWindow } from 'ssr-window';
 
 @Component({
   selector: 'app-projects',
@@ -17,12 +18,14 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   @ViewChildren("rightBtn") rightBtnList: QueryList<ElementRef<HTMLButtonElement>>;
 
   projects: Project[];
+  carouselSize: number;
 
   constructor(private renderer: Renderer2, private elementRef: ElementRef) {
     this.projects = PROJECTS;
     this.leftBtnList = this.elementRef.nativeElement;
     this.rightBtnList = this.elementRef.nativeElement;
     this.imagesList = this.elementRef.nativeElement;
+    this.carouselSize = getWindow().innerWidth >= 930 ? 800 : 620;
   }
 
   ngOnInit() {
@@ -33,7 +36,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       this.renderer.listen(leftBtn.nativeElement, 'click', () => {
         const imageElement = this.imagesList.get(index)?.nativeElement;
         if (imageElement) {
-          imageElement.scrollLeft -= 800;
+          imageElement.scrollLeft -= this.carouselSize;
         }
       });
     });
@@ -42,9 +45,22 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       this.renderer.listen(rightBtn.nativeElement, 'click', () => {
         const imageElement = this.imagesList.get(index)?.nativeElement;
         if (imageElement) {
-          imageElement.scrollLeft += 800;
+          imageElement.scrollLeft += this.carouselSize;
         }
       })
     })
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if (getWindow().innerWidth <= 930 && getWindow().innerWidth >= 671) {
+      this.carouselSize = 500;
+    }
+    else if (getWindow().innerWidth <= 670) {
+      this.carouselSize = 350;
+    }
+    else {
+      this.carouselSize = 800;
+    }
   }
 }

@@ -1,3 +1,5 @@
+@import "../../../mixins";
+
 .presentation {
   height: 1000px;
   display: flex;
@@ -6,6 +8,12 @@
   align-items: flex-start;
   & > * {
     margin-left: 400px;
+    @include small-down {
+      margin-left: 200px;
+    }
+    @include extra-small-down {
+      margin-left: 70px;
+    }
   }
 }
 
@@ -42,9 +50,19 @@ button {
 
 img {
   position: absolute;
-  right: 0;
-  width: 1500px;
+  right: 1vw;
+  width: 100vw;
   z-index: -10;
+  opacity: 0.8;
+  @include medium-down {
+    top: 15vw;
+  }
+  @include small-down {
+    top: 50vw;
+  }
+  @include extra-small-down {
+    top: 100vw;
+  }
 }
 
 .background {
