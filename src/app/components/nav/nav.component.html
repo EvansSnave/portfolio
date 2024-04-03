@@ -1,5 +1,11 @@
 <nav>
-  <img src="../../../assets/images/kevin-logo.png" alt="Developer logo" class="logo">
+  @defer (on viewport){
+    <img src="../../../assets/images/kevin-logo.png" alt="Developer logo" class="logo">
+  } @placeholder {
+    <div>...</div>
+  } @loading {
+    <div>...Loading</div>
+  }
   <ul class="nav__links">
     <li><a routerLink="/">Home</a></li>
     <li><a routerLink="/experience">Experience</a></li>

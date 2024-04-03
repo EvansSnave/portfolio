@@ -2,7 +2,13 @@
   <h1 class="title">MY PROFESSIONAL EXPERIENCES AND EDUCATION</h1>
   <ul>
     <li>
-      <a href="https://www.microverse.org/" target="_blank"><img alt="microverse logo" src="../../../assets/images/microverse.png"></a>
+      @defer (on viewport){
+        <a href="https://www.microverse.org/" target="_blank"><img alt="microverse logo" src="../../../assets/images/microverse.png"></a>
+      } @placeholder {
+        <div>...</div>
+      } @loading {
+        <div>...Loading</div>
+      }
       <article>
         <h1>MICROVERSE</h1>
         <p class="dates">FROM <time datetime="2023-03-20">20-03-2023</time> TO <time datetime="2024-03-01">01-03-2024</time></p>
@@ -18,7 +24,13 @@
       </article>
     </li>
     <li>
-      <a href="https://www.konecta-group.com" target="_blank"><img alt="konecta logo" src="../../../assets/images/logo-konecta.webp"></a>
+      @defer (on viewport){
+        <a href="https://www.konecta-group.com" target="_blank"><img alt="konecta logo" src="../../../assets/images/logo-konecta.webp"></a>
+      } @placeholder {
+        <div>...</div>
+      } @loading {
+        <div>...Loading</div>
+      }
       <article>
         <h1>KONECTA</h1>
         <p class="dates">FROM <time datetime="2022-11-20">20-11-2022</time> TO <time datetime="2023-02-15">15-02-2023</time></p>
@@ -34,7 +46,13 @@
       </article>
     </li>
     <li>
-      <a href="https://www.exlservice.com/" target="_blank"><img alt="EXL logo" src="../../../assets/images/EXL-service-logo.png"></a>
+      @defer (on viewport){
+        <a href="https://www.exlservice.com/" target="_blank"><img alt="EXL logo" src="../../../assets/images/EXL-service-logo.png"></a>
+      } @placeholder {
+        <div>...</div>
+      } @loading {
+        <div>...Loading</div>
+      }
       <article>
         <h1>EXL SERVICES</h1>
         <p class="dates">FROM <time datetime="2022-04-12">12-04-2022</time> TO <time datetime="2022-11-15">15-11-2022</time></p>
@@ -50,7 +68,13 @@
       </article>
     </li>
     <li>
-      <a href="https://www.teleperformance.com/" target="_blank"><img alt="Teleperformance logo" src="../../../assets/images/teleperformance-icon.jpg"></a>     
+      @defer (on viewport){
+        <a href="https://www.teleperformance.com/" target="_blank"><img alt="Teleperformance logo" src="../../../assets/images/teleperformance-icon.jpg"></a> 
+      } @placeholder {
+        <div>...</div>
+      } @loading {
+        <div>...Loading</div>
+      }   
       <article>
         <h1>TELEPERFORMANCE</h1>
         <p class="dates">FROM <time datetime="2021-11-10">10-11-2021</time> TO <time datetime="2022-03-14">14-03-2022</time></p>

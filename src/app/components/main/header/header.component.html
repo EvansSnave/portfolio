@@ -47,7 +47,13 @@
     </summary>
   </section>
   <aside>
-    <img src="../../../../assets/images/profile-removebg-preview.png">
+    @defer (on viewport){
+      <img src="../../../../assets/images/profile-removebg-preview.png">
+    } @placeholder {
+      <div>...</div>
+    } @loading {
+      <div>...Loading</div>
+    }
     <article>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi tempore fuga 
       praesentium, aut eum, dolores, nesciunt consequatur omnis exercitationem aperiam ipsum ullam modi 
